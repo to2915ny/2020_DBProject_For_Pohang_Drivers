@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  
+  table
+    for i in posts
+      for list in i
+        tr
+          td=list
+    
+  table
+    for item in reviews
+      tr
+        td=item.reviewID
+        td=item.Name
+        td=item.Text
+        td=item.rating
+  form(action='/create' method='get')
+    input(type='text' name='title' placeholder='타이틀')
+    input(type='number' name='rating' max='5' placeholder='5점만점')
+    input(type='hidden' name='id', value=id)
+    textarea(rows='4' cols='50' name='content' required maxlength='300')
+    input(type='submit' value='Submit')
+ 

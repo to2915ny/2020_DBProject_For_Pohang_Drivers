@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h2 This is SpeedBump :)
+  table
+    for item in results
+      tr
+        td=item.roadname
+        td=item.address
+        td
+          a(href='/post?title=speedBumps&key=speedBumpID&id=' + item.speedBumpID)=item.name 
