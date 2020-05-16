@@ -6,4 +6,27 @@ html
   body
     a(href = '/') Home
     a(href='/speedbump') 과속방지턱
+    form(action='/search' method='GET')
+      select#cars(name='list')
+        option(value='bicycleRental') 자전거대여소
+        option(value='carService') 차정비소
+        option(value='carWash') 세차장
+        option(value='driveThruRestaurant') 드라이브스루
+        option(value='eletronicVehicleChargingStation') 전기차충전소
+        option(value='overpass') 육교
+        option(value='parkingLot') 주차장
+        option(value='pharmacy') 약국
+        option(value='publicParkingLot') 공영주차장
+        option(value='publicToilet') 공중화장실
+        option(value='rentalCar') 렌트카
+        option(value='schoolZone') 어린이보호구역
+        option(value='speedBumps') 과속방지턱
+        option(value='speedCamera') 무인과속카메라
+        option(value='towedCarStorage') 견인차저장소
+        option(value='trafficLight') 신호등
+        option(value='transportationSupportCenter') 교통지원소
+        option(value='wheelchairCharger') 전기휠체어충전소
+        input(type='text' placeholder='동 또는 도로명' name='search')
+        input(type='submit' value='Search')
+ 
     block content

@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var postRouter = require('./routes/post');
 var speedBumpRouter = require('./routes/speedbump');
 var createRouter = require('./routes/create');
+var searchRouter = require('./routes/search');
 
 var app = express();
 
@@ -34,6 +35,8 @@ app.use('/', indexRouter);
 app.use('/post',postRouter);
 app.use('/speedbump',speedBumpRouter);
 app.use('/create',createRouter);
+app.use('/search',searchRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
