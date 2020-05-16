@@ -1,12 +1,10 @@
 extends layout
 
 block content
-  
   table
-    for i in posts
-      for list in i
-        tr
-          td=list
+   for item in posts
+     for list in item 
+       td=list
     
   table
     for item in reviews
