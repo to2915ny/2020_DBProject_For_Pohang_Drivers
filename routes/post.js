@@ -16,14 +16,13 @@ router.get('/', async (req,res,next) => {
 	sess=req.session;
 	var title = req.query.title;
 	var ID = req.query.id;
-	var key = req.query.key;
 	var urlParsedObj = url.parse(req.url);
 //	console.log(urlParsedObj.path)
 	sess.path =urlParsedObj.path 
 
 	const [review,post] = await Promise.all([
 		bluebird.fromCallback(cb => db.query("SELECT * FROM review WHERE review.postID = "+ID+";",cb)),
-		bluebird.fromCallback(cb => db.query("SELECT * FROM "+title+" WHERE "+title+"."+key+" = "+ID+";",cb))
+		bluebird.fromCallback(cb => db.query("SELECT * FROM "+title+" WHERE ID = "+ID+";",cb))
 	]);
 	if(post && post.length){
 //		console.log(post)
