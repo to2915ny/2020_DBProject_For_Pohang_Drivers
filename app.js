@@ -18,6 +18,11 @@ var carServiceRouter = require('./routes/carservice');
 var rentalCarRouter = require('./routes/rentalcar');
 var schoolZoneRouter = require('./routes/schoolzone');
 
+var carWashRouter = require('./routes/carwash');
+var overpassRouter =require('./routes/overpass');
+var parkingLotRouter = require('./routes/parkinglot');
+var publicParkingLotRouter = require('./routes/publicparkinglot');
+var trafficLightRouter = require('./routes/trafficlight');
 var app = express();
 
 // view engine setup
@@ -44,6 +49,12 @@ app.use('/speedcamera',speedCameraRouter);
 app.use('/rentalcar', rentalCarRouter);
 app.use('/carservice', carServiceRouter);
 app.use('/schoolzone', schoolZoneRouter);
+app.use('/carwash',carWashRouter);
+app.use('/overpass',overpassRouter);
+app.use('/parkinglot',parkingLotRouter);
+app.use('/publicparkinglot',publicParkingLotRouter);
+app.use('/trafficlight',trafficLightRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
