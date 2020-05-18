@@ -13,7 +13,11 @@ var postRouter = require('./routes/post');
 var speedBumpRouter = require('./routes/speedbump');
 var createRouter = require('./routes/create');
 var searchRouter = require('./routes/search');
-
+var carWashRouter = require('./routes/carwash');
+var overpassRouter =require('./routes/overpass');
+var parkingLotRouter = require('./routes/parkinglot');
+var publicParkingLotRouter = require('./routes/publicparkinglot');
+var trafficLightRouter = require('./routes/trafficlight');
 var app = express();
 
 // view engine setup
@@ -36,6 +40,11 @@ app.use('/post',postRouter);
 app.use('/speedbump',speedBumpRouter);
 app.use('/create',createRouter);
 app.use('/search',searchRouter);
+app.use('/carwash',carWashRouter);
+app.use('/overpass',overpassRouter);
+app.use('/parkinglot',parkingLotRouter);
+app.use('/publicparkinglot',publicParkingLotRouter);
+app.use('/trafficlight',trafficLightRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

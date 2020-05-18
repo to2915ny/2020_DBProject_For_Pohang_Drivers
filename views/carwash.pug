@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h2 This is Carwash :)
+  table
+    for item in results
+      tr
+        td=item.address
+        td=item.phoneNumber
+        td=item.name
+        td
+          a(href='/post?title=carWash&id=' + item.ID)=item.name 
