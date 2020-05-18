@@ -13,6 +13,7 @@ var postRouter = require('./routes/post');
 var speedBumpRouter = require('./routes/speedbump');
 var createRouter = require('./routes/create');
 var searchRouter = require('./routes/search');
+var speedCameraRouter = require('./routes/speedcamera');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/post',postRouter);
 app.use('/speedbump',speedBumpRouter);
 app.use('/create',createRouter);
 app.use('/search',searchRouter);
+app.use('/speedcamera',speedCameraRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
