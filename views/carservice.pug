@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h2 This is CarService :)
+  table
+    for item in results
+      tr
+        td=item.address
+        td=item.phoneNumber
+        td
+          a(href='/post?title=carService&id=' + item.ID)=item.name 
