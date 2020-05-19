@@ -25,6 +25,9 @@ var publicParkingLotRouter = require('./routes/publicparkinglot');
 var trafficLightRouter = require('./routes/trafficlight');
 
 var pharmacyRouter = require('./routes/pharmacy');
+var publicToiletRouter = require('./routes/publictoilet');
+var towedCarStorageRouter = require('./routes/towedcarstorage');
+var wheelchairChargerRouter = require('./routes/wheelchaircharger');
 
 var app = express();
 
@@ -58,6 +61,9 @@ app.use('/parkinglot',parkingLotRouter);
 app.use('/publicparkinglot',publicParkingLotRouter);
 app.use('/trafficlight',trafficLightRouter);
 app.use('/pharmacy', pharmacyRouter);
+app.use('/publictoilet',publicToiletRouter);
+app.use('/towedcarstorage',towedCarStorageRouter);
+app.use('/wheelchaircharger',wheelchairChargerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
