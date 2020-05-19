@@ -23,6 +23,9 @@ var overpassRouter =require('./routes/overpass');
 var parkingLotRouter = require('./routes/parkinglot');
 var publicParkingLotRouter = require('./routes/publicparkinglot');
 var trafficLightRouter = require('./routes/trafficlight');
+
+var pharmacyRouter = require('./routes/pharmacy');
+
 var app = express();
 
 // view engine setup
@@ -54,6 +57,7 @@ app.use('/overpass',overpassRouter);
 app.use('/parkinglot',parkingLotRouter);
 app.use('/publicparkinglot',publicParkingLotRouter);
 app.use('/trafficlight',trafficLightRouter);
+app.use('/pharmacy', pharmacyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
