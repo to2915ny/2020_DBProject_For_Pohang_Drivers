@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 This is SpeedBump :)
+  table
+    for item in results
+      tr
+        td=item.name
+        td=item.address
+        td=item.latitude
+        td=item.longitude
+        td=item.startTime
+        td=item.endTime
+        td=item.fee
+        td
+          a(href='/post?title=bicycleRental&id=' + item.ID)=item.name 

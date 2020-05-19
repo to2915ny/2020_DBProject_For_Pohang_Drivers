@@ -17,6 +17,8 @@ var speedCameraRouter = require('./routes/speedcamera');
 var driveThruRestaurant = require('./routes/drivethrurestaurant');
 var electronicVehicleChargingStation = require('./routes/electronicvehiclechargingstation');
 var transportationSupportCenter = require('./routes/transportationsupportcenter');
+var bicycleRental = require('./routes/bicyclerental');
+
 
 var app = express();
 
@@ -44,6 +46,7 @@ app.use('/speedcamera',speedCameraRouter);
 app.use('/drivethrurestaurant',driveThruRestaurant);
 app.use('/electronicvehiclechargingstation',electronicVehicleChargingStation);
 app.use('/transportationsupportcenter',transportationSupportCenter);
+app.use('/bicyclerental',bicycleRental);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
