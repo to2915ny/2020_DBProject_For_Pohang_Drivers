@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h2 This is Wheelchair Charger :)
+  table
+    for item in results
+      tr
+        td=item.name
+        td=item.address
+        td=item.phonenumber
+        td=item.starttime
+        td=item.endtime
+        td=item.location
+        td
+          a(href='/post?title=towedCarStorage&id=' + item.ID)=item.name

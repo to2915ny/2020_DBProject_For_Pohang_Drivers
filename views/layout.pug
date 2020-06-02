@@ -6,20 +6,25 @@ html
   body
     a(href = '/') Home
     a(href='/speedbump') 과속방지턱&nbsp;
-    a(href='/speedcamera') 무인카메라&nbsp;
+    a(href='/speedcamera') 무인과속카메라&nbsp;
     a(href='/rentalcar') 렌트카&nbsp;
     a(href='/carservice') 자동차정비소&nbsp;
-    a(href='/schoolzone') 스쿨존
+    a(href='/schoolzone') 어린이보호구역
     a(href='/carwash') 세차장
     a(href='/overpass') 육교
     a(href='/parkinglot') 주차장
-    a(href='/publicparkinglot') 공용주차장
+    a(href='/publicparkinglot') 공영주차장
     a(href='/trafficlight') 신호등 
     a(href='/drivethrurestaurant') 드라이브스루
     a(href='/electronicvehiclechargingstation') 전기차충전소
     a(href='/transportationsupportcenter') 교통지원소
+    a(href='/pharmacy') 약국
+    a(href='/publictoilet') 공중화장실
+    a(href='/towedcarstorage') 견인차저장소
+    a(href='/wheelchaircharger') 전기휠체어충전소
+    a(href='/bicyclerental') 자전거대여소
     form(action='/search' method='GET')
-      select#cars(name='list') 교통지원소
+      select#cars(name='list') 
         option(value='bicycleRental') 자전거대여소
         option(value='carService') 차정비소
         option(value='carWash') 세차장

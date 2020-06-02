@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h2 This is Wheelchair Charger :)
+  table
+    for item in results
+      tr
+        td=item.address
+        td=item.starttime
+        td=item.endtime
+        td
+          a(href='/post?title=bicycleRental&id=' + item.ID)=item.name
