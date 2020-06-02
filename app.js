@@ -17,6 +17,9 @@ var speedCameraRouter = require('./routes/speedcamera');
 var carServiceRouter = require('./routes/carservice');
 var rentalCarRouter = require('./routes/rentalcar');
 var schoolZoneRouter = require('./routes/schoolzone');
+var driveThruRestaurant = require('./routes/drivethrurestaurant');
+var electronicVehicleChargingStation = require('./routes/electronicvehiclechargingstation');
+var transportationSupportCenter = require('./routes/transportationsupportcenter');
 
 var carWashRouter = require('./routes/carwash');
 var overpassRouter =require('./routes/overpass');
@@ -54,6 +57,9 @@ app.use('/overpass',overpassRouter);
 app.use('/parkinglot',parkingLotRouter);
 app.use('/publicparkinglot',publicParkingLotRouter);
 app.use('/trafficlight',trafficLightRouter);
+app.use('/drivethrurestaurant',driveThruRestaurant);
+app.use('/electronicvehiclechargingstation',electronicVehicleChargingStation);
+app.use('/transportationsupportcenter',transportationSupportCenter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
