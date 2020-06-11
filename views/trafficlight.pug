@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h2 This is TrafficLight :)
+  table
+    for item in results
+      tr
+        td=item.address
+        td=item.name
+        td
+          a(href='/post?title=trafficLight&id=' + item.ID)=item.name 

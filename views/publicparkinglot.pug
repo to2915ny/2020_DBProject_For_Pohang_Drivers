@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h2 This is publicparkinglot :)
+  table
+    for item in results
+      tr
+        td=item.address
+        td=item.type
+        td=item.operatingDays
+        td=item.fee
+        td=item.paymentMethod
+        td=item.name
+        td
+          a(href='/post?title=publicParkingLot&id=' + item.ID)=item.name 

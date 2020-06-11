@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h2 This is parkinglot :)
+  table
+    for item in results
+      tr
+        td=item.address
+        td=item.type
+        td=item.name
+        td=item.operatingDays
+        td=item.fee
+        td=item.paymentMethod
+        td
+          a(href='/post?title=carWash&id=' + item.ID)=item.name 

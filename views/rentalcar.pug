@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 This is RentalCar :)
+  table
+    for item in results
+      tr
+        td=item.address
+        td=item.startTime
+        td=item.endTime
+        td=phoneNumber
+        td
+          a(href='/post?title=rentalCar&id=' + item.ID)=item.name 

@@ -14,12 +14,26 @@ var speedBumpRouter = require('./routes/speedbump');
 var createRouter = require('./routes/create');
 var searchRouter = require('./routes/search');
 var speedCameraRouter = require('./routes/speedcamera');
+var carServiceRouter = require('./routes/carservice');
+var rentalCarRouter = require('./routes/rentalcar');
+var schoolZoneRouter = require('./routes/schoolzone');
 var driveThruRestaurant = require('./routes/drivethrurestaurant');
 var electronicVehicleChargingStation = require('./routes/electronicvehiclechargingstation');
 var transportationSupportCenter = require('./routes/transportationsupportcenter');
 var bicycleRental = require('./routes/bicyclerental');
 
 
+var carWashRouter = require('./routes/carwash');
+var overpassRouter =require('./routes/overpass');
+var parkingLotRouter = require('./routes/parkinglot');
+var publicParkingLotRouter = require('./routes/publicparkinglot');
+var trafficLightRouter = require('./routes/trafficlight');
+
+var pharmacyRouter = require('./routes/pharmacy');
+var publicToiletRouter = require('./routes/publictoilet');
+var towedCarStorageRouter = require('./routes/towedcarstorage');
+var wheelchairChargerRouter = require('./routes/wheelchaircharger');
+var bicycleRentalRouter = require('./routes/bicyclerental');
 var app = express();
 
 // view engine setup
@@ -43,11 +57,22 @@ app.use('/speedbump',speedBumpRouter);
 app.use('/create',createRouter);
 app.use('/search',searchRouter);
 app.use('/speedcamera',speedCameraRouter);
+app.use('/rentalcar', rentalCarRouter);
+app.use('/carservice', carServiceRouter);
+app.use('/schoolzone', schoolZoneRouter);
+app.use('/carwash',carWashRouter);
+app.use('/overpass',overpassRouter);
+app.use('/parkinglot',parkingLotRouter);
+app.use('/publicparkinglot',publicParkingLotRouter);
+app.use('/trafficlight',trafficLightRouter);
 app.use('/drivethrurestaurant',driveThruRestaurant);
 app.use('/electronicvehiclechargingstation',electronicVehicleChargingStation);
 app.use('/transportationsupportcenter',transportationSupportCenter);
-app.use('/bicyclerental',bicycleRental);
-
+app.use('/pharmacy', pharmacyRouter);
+app.use('/publictoilet',publicToiletRouter);
+app.use('/towedcarstorage',towedCarStorageRouter);
+app.use('/wheelchaircharger',wheelchairChargerRouter);
+app.use('/bicyclerental',bicycleRentalRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
