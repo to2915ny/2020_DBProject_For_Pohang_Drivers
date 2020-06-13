@@ -2,10 +2,23 @@ extends layout
 
 block content
   h2 This is DriveThruRestaurant :)
-  table
-    for item in results
-      tr
-        td=item.name
-        td=item.address
-        td
-          a(href='/post?title=driveThruRestaurant&id=' + item.ID)=item.name 
+  .jumbotron
+    h1.display-4
+    table
+      for item in results
+        tr
+          td=item.name
+          td=item.address
+          td
+            a(href='/post?title=driveThruRestaurant&id=' + item.ID)=item.name
+
+  style.
+    table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    }
+    td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    } 
