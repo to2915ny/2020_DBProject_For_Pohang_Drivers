@@ -1,15 +1,20 @@
 extends layout
 
 block content
-  h2 This is parkinglot :)
-  .jumbotron
-    h1.display-4 
-    table
+  h2 This is parkinglot :) 
+  table
+    thead
+      th address
+      th type
+      th operatingDays
+      th fee
+      th paymentMethod
+      th name
+    tbody
       for item in results
         tr
           td=item.address
           td=item.type
-          td=item.name
           td=item.operatingDays
           td=item.fee
           td=item.paymentMethod
@@ -22,7 +27,18 @@ block content
     border-top: 1px solid #444444;
     border-collapse: collapse;
     }
-    td {
-    border-bottom: 1px solid #444444;
+    th, td {
     padding: 10px;
-    } 
+    text-align: center;
+    }
+    thead tr {
+    background-color: gray;
+    color: #ffffff;
+    }
+    tbody tr:nth-child(2n) {
+    background-color: #d3d3d3;
+    }
+    tbody tr:nth-child(2n+1) {
+    background-color: white;
+    }
+ 
