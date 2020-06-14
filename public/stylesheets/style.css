@@ -109,3 +109,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+div.Table_length {
+	margin-right: 2em;
+}

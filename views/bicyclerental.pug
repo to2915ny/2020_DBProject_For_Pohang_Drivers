@@ -1,12 +1,28 @@
 extends layout
 
 block content
-  h2 This is BycycleRental :)
-  table
-    for item in results
-      tr
-        td=item.address
-        td=item.starttime
-        td=item.endtime
-        td
-          a(href='/post?title=bicycleRental&id=' + item.ID)=item.name
+  h2 This is BycycleRental Charger :)
+
+  .jumbotron
+    h1.display-4  
+    table
+      for item in results
+        tr
+          td=item.address
+          td=item.starttime
+          td=item.endtime
+          td
+            a(href='/post?title=bicycleRental&id=' + item.ID)=item.name
+
+  style.
+    table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    }
+    td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    }
+  
+>>>>>>> 3abc19973e1182dcfdad7be33f6bfe8694c245ac
