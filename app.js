@@ -6,7 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 
 
-
+//
 var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 var postRouter = require('./routes/post');
@@ -20,15 +20,11 @@ var schoolZoneRouter = require('./routes/schoolzone');
 var driveThruRestaurant = require('./routes/drivethrurestaurant');
 var electronicVehicleChargingStation = require('./routes/electronicvehiclechargingstation');
 var transportationSupportCenter = require('./routes/transportationsupportcenter');
-var bicycleRental = require('./routes/bicyclerental');
-
-
 var carWashRouter = require('./routes/carwash');
 var overpassRouter =require('./routes/overpass');
 var parkingLotRouter = require('./routes/parkinglot');
 var publicParkingLotRouter = require('./routes/publicparkinglot');
 var trafficLightRouter = require('./routes/trafficlight');
-
 var pharmacyRouter = require('./routes/pharmacy');
 var publicToiletRouter = require('./routes/publictoilet');
 var towedCarStorageRouter = require('./routes/towedcarstorage');

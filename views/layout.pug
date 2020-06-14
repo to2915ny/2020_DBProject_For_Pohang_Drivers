@@ -1,49 +1,129 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    a(href = '/') Home
-    a(href='/speedbump') 과속방지턱&nbsp;
-    a(href='/speedcamera') 무인과속카메라&nbsp;
-    a(href='/rentalcar') 렌트카&nbsp;
-    a(href='/carservice') 자동차정비소&nbsp;
-    a(href='/schoolzone') 어린이보호구역
-    a(href='/carwash') 세차장
-    a(href='/overpass') 육교
-    a(href='/parkinglot') 주차장
-    a(href='/publicparkinglot') 공영주차장
-    a(href='/trafficlight') 신호등 
-    a(href='/drivethrurestaurant') 드라이브스루
-    a(href='/electronicvehiclechargingstation') 전기차충전소
-    a(href='/transportationsupportcenter') 교통지원소
-    a(href='/pharmacy') 약국
-    a(href='/publictoilet') 공중화장실
-    a(href='/towedcarstorage') 견인차저장소
-    a(href='/wheelchaircharger') 전기휠체어충전소
-    a(href='/bicyclerental') 자전거대여소
-    form(action='/search' method='GET')
-      select#cars(name='list') 
-        option(value='bicycleRental') 자전거대여소
-        option(value='carService') 차정비소
-        option(value='carWash') 세차장
-        option(value='driveThruRestaurant') 드라이브스루
-        option(value='eletronicVehicleChargingStation') 전기차충전소
-        option(value='overpass') 육교
-        option(value='parkingLot') 주차장
-        option(value='pharmacy') 약국
-        option(value='publicParkingLot') 공영주차장
-        option(value='publicToilet') 공중화장실
-        option(value='rentalCar') 렌트카
-        option(value='schoolZone') 어린이보호구역
-        option(value='speedBumps') 과속방지턱
-        option(value='speedCamera') 무인과속카메라
-        option(value='towedCarStorage') 견인차저장소
-        option(value='trafficLight') 신호등
-        option(value='transportationSupportCenter') 교통지원소
-        option(value='wheelchairCharger') 전기휠체어충전소
-        input(type='text' placeholder='동 또는 도로명' name='search')
-        input(type='submit' value='Search')
- 
-    block content
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  meta(name='author' content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+  meta(name='generator' content='Jekyll v4.0.1')
+  title Dashboard Template &middot; Bootstrap
+  link(rel='canonical' href='https://getbootstrap.com/docs/4.5/examples/dashboard/')
+  // Bootstrap core CSS
+  link(rel='stylesheet' href='//unpkg.com/bootstrap@4/dist/css/bootstrap.min.css')
+  style.
+    .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+    }
+  // Custom styles for this template
+  link(href='style.css' rel='stylesheet' type='text/css')
+nav.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow
+  a.navbar-brand.col-md-3.col-lg-2.mr-0.px-3(href='/') Home
+  button.navbar-toggler.position-absolute.d-md-none.collapsed(type='button' data-toggle='collapse' data-target='#sidebarMenu' aria-controls='sidebarMenu' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  input.form-control.form-control-dark.w-100(type='text' placeholder='동 또는 도로명' aria-label='Search')
+  ul.navbar-nav.px-3
+    li.nav-item.text-nowrap
+      a.nav-link(href='#') serch
+.container-fluid
+  .row
+    nav#sidebarMenu.col-md-3.col-lg-2.d-md-block.bg-light.sidebar.collapse
+      .sidebar-sticky.pt-3
+        ul.nav.flex-column
+          li.nav-item
+            a.nav-link.active(href='towedcarstorage')
+              span(data-feather='towedcarstorage')
+              |                 견인차저장소
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='publicparkinglot')
+              span(data-feather='file')
+              |                 공영주차장
+          li.nav-item
+            a.nav-link(href='transportationsupportcenter')
+              span(data-feather='file')
+              |                 교통지원센터
+          li.nav-item
+            a.nav-link(href='publictoilet')
+              span(data-feather='shopping-cart')
+              |                 공중화장실
+          li.nav-item
+            a.nav-link(href='speedbump')
+              span(data-feather='users')
+              |                 과속방지턱
+          li.nav-item
+            a.nav-link(href='speedcamera')
+              span(data-feather='bar-chart-2')
+              |                 과속카메라
+          li.nav-item
+            a.nav-link(href='drivethrurestaurant')
+              span(data-feather='layers')
+              |                 드라이브쓰루
+          li.nav-item
+            a.nav-link(href='rentalcar')
+              span(data-feather='layers')
+              |                 렌트카
+          li.nav-item
+            a.nav-link(href='parkinglot')
+              span(data-feather='layers')
+              |                 사설주차장
+          li.nav-item
+            a.nav-link(href='carwash')
+              span(data-feather='layers')
+              |                 세차장
+          li.nav-item
+            a.nav-link(href='trafficlight')
+              span(data-feather='layers')
+              |                 신호등
+          li.nav-item
+            a.nav-link(href='overpass')
+              span(data-feather='layers')
+              |                 육교
+          li.nav-item
+            a.nav-link(href='pharmacy')
+              span(data-feather='layers')
+              |                 약국
+          li.nav-item
+            a.nav-link(href='schoolzone')
+              span(data-feather='layers')
+              |                 어린이보호구역
+          li.nav-item
+            a.nav-link(href='bicyclerental')
+              span(data-feather='layers')
+              |                 자전거대여소
+          li.nav-item
+            a.nav-link(href='carservice')
+              span(data-feather='layers')
+              |                 자동차정비소
+          li.nav-item
+            a.nav-link(href='electronicvehiclechargingstation')
+              span(data-feather='layers')
+              |                 전기차충전소
+          li.nav-item
+            a.nav-link(href='wheelchaircharger')
+              span(data-feather='layers')
+              |                 휠체어충전소
+    main.col-md-9.ml-sm-auto.col-lg-10.px-md-4(role='main')
+      .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+        h1.h2 Dashboard
+        .btn-toolbar.mb-2.mb-md-0
+      block content
+script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+script.
+  window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\\/script>')
+script(src='../assets/dist/js/bootstrap.bundle.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js')
+script(src='dashboard.js')
+script(src='//unpkg.com/jquery@3/dist/jquery.min.js')
+script(src='//unpkg.com/popper.js@1/dist/umd/popper.min.js')
+script(src='//unpkg.com/bootstrap@4/dist/js/bootstrap.min.js')
+
