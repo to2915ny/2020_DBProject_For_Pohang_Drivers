@@ -5,7 +5,7 @@ head
   meta(name='description' content='')
   meta(name='author' content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
   meta(name='generator' content='Jekyll v4.0.1')
-  title Dashboard Template &middot; Bootstrap
+  title Pohang Driver Service
   link(rel='canonical' href='https://getbootstrap.com/docs/4.5/examples/dashboard/')
   // Bootstrap core CSS
   link(rel='stylesheet' href='//unpkg.com/bootstrap@4/dist/css/bootstrap.min.css')
@@ -26,13 +26,16 @@ head
   // Custom styles for this template
   link(href='style.css' rel='stylesheet' type='text/css')
 nav.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow
-  a.navbar-brand.col-md-3.col-lg-2.mr-0.px-3(href='/') Home
+  a.navbar-brand.col-md-3.col-lg-2.mr-0.px-2(href='/') Pohang Driver Service
   button.navbar-toggler.position-absolute.d-md-none.collapsed(type='button' data-toggle='collapse' data-target='#sidebarMenu' aria-controls='sidebarMenu' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
-  input.form-control.form-control-dark.w-100(type='text' placeholder='동 또는 도로명' aria-label='Search')
-  ul.navbar-nav.px-3
-    li.nav-item.text-nowrap
-      a.nav-link(href='#') serch
+  form(action='/search' method='GET')
+    select.navbar-nav.px-3.navbar-toggler.bg-dark.flex-md-nowrap
+      option(value='towedCarStorage') 견인차저장소
+      option(value='회사원') 공영주차장
+      option(value='기타') 교통지원센터
+    input.form-control.form-control-dark.w-100(type='text' placeholder='동 또는 도로명' name='search')
+    input.bg-dark.navbar-nav.navbar-toggler(type='submit' value='Search')
 .container-fluid
   .row
     nav#sidebarMenu.col-md-3.col-lg-2.d-md-block.bg-light.sidebar.collapse
