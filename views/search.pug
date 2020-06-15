@@ -1,11 +1,37 @@
 extends layout
 
 block content
-  h2 This is discovered table :) 
   table
-    for item in results
-      tr
-        td=item.roadname
-        td=item.address
-        td
-          a(href='/post?title='+table+'&id=' + item.ID)=item.name 
+    thead
+      th roadname
+      th address
+      th name  
+    tbody
+      for item in results
+        tr
+          td=item.roadname
+          td=item.address
+          td
+            a(href='/post?title='+table+'&id=' + item.ID)=item.name
+
+  style.
+    table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    }
+    th, td {
+    padding: 10px;
+    text-align: center;
+    }
+    thead tr {
+    background-color: gray;
+    color: #ffffff;
+    }
+    tbody tr:nth-child(2n) {
+    background-color: #d3d3d3;
+    }
+    tbody tr:nth-child(2n+1) {
+    background-color: white;
+    }
+ 
