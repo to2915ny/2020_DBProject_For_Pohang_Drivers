@@ -71,11 +71,28 @@ block content
       }
       tbody tr:nth-child(2n+1) {
       background-color: white;
-      } 
-    
+      }
+      input, textarea {
+      padding: 5px;
+      margin: 4px;
+      border: solid #ccc;
+      box-sizing: border-box;
+      border-radius:4px;
+      }
+      input[type=text] {
+      width: 43%;
+      }
+      input[type=number] {
+      width: 10%;
+      }
+
+   
+    hr
+    p(style="font-size:23px;") 
+      i Share your own review for this facility! 
     form(action='/create' method='get')
       input(type='text' name='title' placeholder='Title')
-      input(type='number' name='rating' max='5' placeholder='*/5')
       input(type='hidden' name='id', value=id)
-      textarea(rows='4' cols='50' name='content' required maxlength='300')
+      input(type='text' name='content' placeholder='Content')
+      input(type='number' name='rating' min='0' max='5' placeholder='*/5')
       input(type='submit' value='Register')
