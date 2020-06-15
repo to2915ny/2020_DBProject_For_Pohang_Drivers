@@ -20,8 +20,9 @@ router.get('/',function(req, res, next){
   	else{
 //		console.log(result);
 
-		res.render('search',{results :result, table : table});
-	
+		res.render('search',{results :result, table : table});	
+		
+
 	
 	}
   });

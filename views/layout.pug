@@ -22,6 +22,7 @@ head
     .bd-placeholder-img-lg {
     font-size: 3.5rem;
     }
+    img { display: block; margin: 0px auto; }
     }
   // Custom styles for this template
   link(href='style.css' rel='stylesheet' type='text/css')
@@ -29,13 +30,30 @@ nav.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow
   a.navbar-brand.col-md-3.col-lg-2.mr-0.px-2(href='/') Pohang Driver Service
   button.navbar-toggler.position-absolute.d-md-none.collapsed(type='button' data-toggle='collapse' data-target='#sidebarMenu' aria-controls='sidebarMenu' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
-  form(action='/search' method='GET')
-    select.navbar-nav.px-3.navbar-toggler.bg-dark.flex-md-nowrap
-      option(value='towedCarStorage') 견인차저장소
-      option(value='회사원') 공영주차장
-      option(value='기타') 교통지원센터
-    input.form-control.form-control-dark.w-100(type='text' placeholder='동 또는 도로명' name='search')
-    input.bg-dark.navbar-nav.navbar-toggler(type='submit' value='Search')
+  form.form-inline(action='/search' method='GET' role='form')
+    .form-group
+      select.navbar-nav.px-3.navbar-toggler.bg-dark.flex-md-nowrap#cars(name='list')
+        option(value='towedCarStorage') 견인차저장소
+        option(value='publicParkingLot') 공영주차장
+        option(value='transportationSupportCenter') 교통지원센터
+        option(value='publicToilet') 공중화장실
+        option(value='speedBumps') 과속방지턱
+        option(value='speedCamera') 과속카메라
+        option(value='driveThruRestaurant') 드라이브쓰루
+        option(value='rentalCar') 렌트카
+        option(value='parkingLot') 사설주차장
+        option(value='carWash') 세차장
+        option(value='trafficLight') 신호등
+        option(value='overpass') 육교
+        option(value='pharmacy') 약국
+        option(value='schoolZone') 어린이보호구역
+        option(value='bicycleRental') 자전거대여소
+        option(value='electronicVehicleChargingStation') 전기차충전소
+        option(value='wheelchairCharger') 휠체어충전소			
+    .form-group    
+      input.form-control.form-control-dark.w-100(type='text' placeholder='동 또는 도로명' name='search')
+    .form-group
+      input.bg-dark.navbar-nav.navbar-toggler(type='submit' value='Search')
 .container-fluid
   .row
     nav#sidebarMenu.col-md-3.col-lg-2.d-md-block.bg-light.sidebar.collapse
@@ -116,7 +134,6 @@ nav.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow
               |                 휠체어충전소
     main.col-md-9.ml-sm-auto.col-lg-10.px-md-4(role='main')
       .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
-        h1.h2 Dashboard
         .btn-toolbar.mb-2.mb-md-0
       block content
 script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
