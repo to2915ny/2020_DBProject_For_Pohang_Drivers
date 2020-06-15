@@ -1,45 +1,81 @@
 extends layout
-
 block content
 
-  h1.display-3
-    strong TITLE
-
-  .row
-    .card.border-primary.mb-3(style='max-width: 50rem;')
-      .card-header Information
+  .jumbotron
+    h1.display-6 Facility Information
+    .card.border-muted.mb-3(style='max-width: 100rem;')
       .card-body
         table
+          colgroup
+            col(width='200')
           for item in posts
-            for list in item 
-              td=list
-    .jumbotron
-      h1.display-4
-        strong Reviews
-      table
+            tr
+              th(scope='row') Facility Name
+              td=item.name
+            tr
+              th(scope='row') Address
+              td=item.address
+            tr
+              th(scope='row') Operating Days
+              td=item.operatingDays
+            tr
+              th(scope='row') Start Time
+              td=item.startTime
+            tr
+              th(scope='row') End Time
+              td=item.endTime               
+            tr
+              th(scope='row') Fee
+              td=item.fee
+            tr
+              th(scope='row') Telephone No.
+              td=item.phoneNumber
+  .jumbotron
+    h1.display-6 Location Map
+    .mapouter
+      .gmap_canvas
+        for a in posts
+          iframe#gmap_canvas(width='1000' height='500' src='https://map.kakao.com/?q='+a.address frameborder='0' scrolling='no' marginheight='0' marginwidth='0')
+      style.
+       .mapouter{position:relative;text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}                                                                                                                                  
+  .jumbotron
+    h1.display-6 User Reviews
+    table
+      thead
+        tr
+          th ID
+          th Title
+          th Content
+          th Rating
+      tbody
         for item in reviews
           tr
             td=item.reviewID
             td=item.Name
             td=item.Text
             td=item.rating
-      form(action='/create' method='get')
-        input(type='text' name='title' placeholder='타이틀')
-        input(type='number' name='rating' max='5' placeholder='5점만점')
-        input(type='hidden' name='id', value=id)
-        textarea(rows='4' cols='50' name='content' required maxlength='300')
-        input(type='submit' value='Submit')
-
-  .jumbotron
-    h1.display-4
-      strong Map to go
-  
-    .mapouter
-      .gmap_canvas
-        for a in posts
-          iframe#gmap_canvas(width='1000' height='500' src='https://map.kakao.com/?q='+a.address frameborder='0' scrolling='no' marginheight='0' marginwidth='0')
-      style.
-       .mapouter{position:relative;text-align:right;height:500px;width:1000px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1000px;}                                                                                                                                  
-     
-
-
+    style.
+      table {
+      width: 100%;
+      border-collapse: collapse;
+      }
+      th, td {
+      padding: 5px;
+      }
+      thead tr {
+      background-color: gray;
+      color: #ffffff;
+      }
+      tbody tr:nth-child(2n) {
+      background-color: #d3d3d3;
+      }
+      tbody tr:nth-child(2n+1) {
+      background-color: white;
+      } 
+    
+    form(action='/create' method='get')
+      input(type='text' name='title' placeholder='Title')
+      input(type='number' name='rating' max='5' placeholder='*/5')
+      input(type='hidden' name='id', value=id)
+      textarea(rows='4' cols='50' name='content' required maxlength='300')
+      input(type='submit' value='Register')
