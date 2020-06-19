@@ -5,13 +5,11 @@ block content
   table
     thead
       th address
-      th phoneNumber
       th name
     tbody
       for item in results
         tr
           td=item.address
-          td=item.phonenumber
           td
             a(href='/post?title=towedCarStorage&id=' + item.ID)=item.name
 

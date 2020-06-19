@@ -6,13 +6,11 @@ block content
     thead
       tr
         th address
-        th phoneNumber
         th name
     tbody
       for item in results
         tr
           td=item.address
-          td=item.phoneNumber
           td
             a(href='/post?title=carService&id=' + item.ID)=item.name
 

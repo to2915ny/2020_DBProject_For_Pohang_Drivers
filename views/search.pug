@@ -3,13 +3,11 @@ extends layout
 block content
   table
     thead
-      th roadname
       th address
       th name  
     tbody
       for item in results
         tr
-          td=item.roadname
           td=item.address
           td
             a(href='/post?title='+table+'&id=' + item.ID)=item.name
